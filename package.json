@@ -1,0 +1,48 @@
+{
+  "name": "componentinstorybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "module": "./.lib/esm/index.js",
+  "main": "./.lib/cjs/index.js",
+  "license": "MIT",
+  "files": [
+    ".lib/"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "tsc-build": "tsc -p tsconfig-esm.json && tsc -p tsconfig-cjs.json",
+    "copy-css": "ncp src/components .lib/cjs/src/components && ncp src/components .lib/esm/src/components",
+    "publish:npm": "rm -rf .lib && npm run tsc-build && npm run copy-css && npm publish"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.9",
+    "vite-plugin-svgr": "^2.4.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/addons": "^7.0.6",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/builder-vite": "^7.0.6",
+    "@storybook/manager": "^7.0.6",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-vite": "^7.0.6",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^3.1.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.6",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
+}
