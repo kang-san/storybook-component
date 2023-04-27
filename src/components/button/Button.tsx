@@ -8,9 +8,9 @@ type Usage =
   | "exit"
   | "update"
   | "confirm"
-  | "upload"
-  | "excel"
-  | "cancel"
+  // | "upload"
+  // | "excel"
+  // | "cancel"
   | "primary";
 
 interface Props {
